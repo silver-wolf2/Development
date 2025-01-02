@@ -1,32 +1,66 @@
-Solidity Smart Contracts Repository 🚀
+## Foundry
 
-Welcome to my journey into the world of Web3 development! This repository will serve as my personal space for learning, experimenting, and building smart contracts using Solidity.
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-About This Repository
+Foundry consists of:
 
-Here, you’ll find a growing collection of Solidity smart contracts that I am developing as part of my Web3 journey. From simple storage solutions to more advanced decentralized applications (dApps), this repository will document my progress and milestones.
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-What to Expect
+## Documentation
 
-As I continue to learn, I’ll be updating this repository with:
-	•	Smart Contracts: Well-documented Solidity code for various use cases.
-	•	Experimentation: New concepts, libraries, and patterns in smart contract development.
-	•	Best Practices: Code examples that follow Solidity development standards.
+https://book.getfoundry.sh/
 
-Current Focus
-	•	Learning Solidity: Completing Solidity tutorials and courses (e.g., Patrick Collins’ Cyfrin Updraft).
-	•	Exploring Ethereum: Writing and testing contracts for Ethereum and Layer 2 solutions.
-	•	Deployments: Testing on development environments and public testnets.
+## Usage
 
-Tools and Technologies
-	•	Solidity: Smart contract programming language.
-	•	Remix IDE: A powerful, browser-based IDE for writing and deploying contracts.
-	•	GitHub: For version control and collaboration.
-	•	Ethereum Blockchain: Targeting Ethereum and related Layer 2 solutions like zkSync.
+### Build
 
-Get Involved
+```shell
+$ forge build
+```
 
-Goals for This Repository
-	•	Build a collection of reusable Solidity contracts.
-	•	Deepen my understanding of blockchain development.
-	•	Contribute to the Web3 community with open-source projects.
+### Test
+
+```shell
+$ forge test
+```
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
