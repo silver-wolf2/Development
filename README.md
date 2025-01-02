@@ -1,6 +1,6 @@
 Solidity Smart Contracts Repository 🚀
 
-Welcome to my journey into the world of Web3 development! This repository will serve as my personal space for learning, experimenting, and building smart contracts using Solidity. Let's go! 💻🫡
+Welcome to my journey into the world of Web3 development! This repository will serve as my personal space for learning, experimenting, and building smart contracts using Solidity. Let's go! 💻 🫡 💻
 
 About This Repository
 
