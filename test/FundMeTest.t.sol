@@ -4,4 +4,16 @@ pragma solidity ^0.8.18;
 
 import {Test} from "forge-std/Test.sol";
 
-contract FundMeTest {}
+contract FundMeTest is Test {
+    uint256 number = 1;
+
+    function setUp() external {
+        number = 2;
+    }
+
+    function testDemo() public {
+        // console.log(number);
+        // console.log("Hello, World!");
+        assertEq(number, 2);
+    }
+}
