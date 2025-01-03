@@ -8,7 +8,7 @@ import {AggregatorV3Interface} from "./AggregatorV3Interface.sol";
 
 ///Users/panev/Web3/VP REPO/code-breaker/lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol
 
-error NotOwner();
+error FundMe_NotOwner();
 
 contract FundMe {
     using PriceConverter for uint256;
@@ -38,7 +38,7 @@ contract FundMe {
 
     modifier onlyOwner() {
         // require(msg.sender == owner);
-        if (msg.sender != i_owner) revert NotOwner();
+        if (msg.sender != i_owner) revert FundMe_NotOwner();
         _;
     }
 
