@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fund Me App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <button id="connectButton">Connect</button>
-    <button id="balanceButton">getBalance</button>
-    <button id="withdrawButton">Withdraw</button>
-    <!-- <form> -->
-    <label for="ethAmount">ETH Amount</label>
-    <input id="ethAmount" placeholder="0.1" />
-    <button type="button" id="fundButton"> Fund </button>
-    <!-- </form> -->
+    <div class="container">
+        <header>
+            <h1>Fund Me DApp</h1>
+            <p>Interact with your wallet and fund the project!</p>
+        </header>
+        <main>
+            <div class="button-group">
+                <button id="connectButton" class="btn">Connect Wallet</button>
+                <button id="balanceButton" class="btn">Get Balance</button>
+                <button id="withdrawButton" class="btn">Withdraw</button>
+            </div>
+            <div class="fund-section">
+                <label for="ethAmount">ETH Amount</label>
+                <input id="ethAmount" class="input" placeholder="0.1" />
+                <button type="button" id="fundButton" class="btn">Fund</button>
+            </div>
+        </main>
+        <footer>
+            <p>My First Web3 DApp</p>
+        </footer>
+    </div>
+    <script src="./index.js" type="module"></script>
 </body>
-
-<script src="./index.js" type="module"></script>
 
 </html>
