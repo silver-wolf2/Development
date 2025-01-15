@@ -23,6 +23,8 @@
 
 pragma solidity ^0.8.19;
 
+import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
+
 /**
  * @title A sample Raffle contract
  * @author Vladimir Panev
@@ -30,7 +32,7 @@ pragma solidity ^0.8.19;
  * @dev Implements Chainlink VRFv2.5
  */
 
-contract Raffle {
+contract Raffle is VRFConsumerBaseV2Plus {
     /* Errors */
     error Raffle_SendMoreToEnterRaffle();
 
@@ -43,7 +45,12 @@ contract Raffle {
     /** Events */
     event RaffleEntered(address indexed player);
 
-    constructor(uint256 entranceFee, uint256 interval) {
+    constructor(
+        uint256 entranceFee,
+        uint256 interval,
+        address vrfCoordinator
+    ) VRFConsumerBaseV2Plus(vrfCoordinator) {
+        // When we inherit from VRFConsumerBaseV2Plus, we need to pass the vrfCoordinator address in the constructor
         i_entranceFee = entranceFee;
         i_interval = interval;
         s_lastTimeStamp = block.timestamp;
@@ -65,7 +72,25 @@ contract Raffle {
         if ((block.timestamp - s_lastTimeStamp) < i_interval) {
             revert();
         }
+
+        // uint256 requestID = s_vrfCoordinator.requestRandomWords(
+        //     VRFV2PlusClient.RandomWordsRequest({
+        //         keyHash: keyHash,
+        //         subId: subId,
+        //         requestConfirmations: requestConfirmations,
+        //         callbackGasLimit: callbackGasLimit,
+        //         numWords: numWords,
+        //         extraArgs: VRFV2PlusClient._argsToBytes(
+        //             VRFV2PlusClient.ExtraArgsV1({nativePayment: true})
+        //         ) // new parameter
+        //     })
+        // );
     }
+
+    function fulfillRandomWords(
+        uint256 requestId,
+        uint256[] calldata randomWords
+    ) internal virtual override {}
 
     /**
      * Getter function for entrance fee
