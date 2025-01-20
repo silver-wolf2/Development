@@ -2,8 +2,10 @@
 pragma solidity ^0.8.19;
 
 import {Script, console} from "forge-std/Script.sol";
-import {HelperConfig} from "./HelperConfig.s.sol";
+import {HelperConfig, CodeConstants} from "./HelperConfig.s.sol";
 import {VRFCoordinatorV2_5Mock} from "@chainlink/contracts/src/v0.8/vrf/mocks/VRFCoordinatorV2_5Mock.sol";
+import {LinkTokenInterface} from "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol";
+import {LinkToken} from "test/mocks/LinkToken.sol";
 
 contract CreateSubscriptions is Script {
     function createSubscriptionConfig() public returns (uint256, address) {
@@ -29,5 +31,50 @@ contract CreateSubscriptions is Script {
         return (subId, vrfCoordinator);
     }
 
-    function run() public {}
+    function run() public {
+        createSubscriptionConfig();
+    }
+}
+
+contract FundSubscripton is Script, CodeConstants {
+    uint256 public constant FUND_AMOUNT = 1 ether; // 3 LINK
+
+    function fundSubscriptionUsingConfig() public {
+        HelperConfig helperConfig = new HelperConfig();
+        address vrfCoordinator = helperConfig.getConfig().vrfCoordinator;
+        uint256 subscriptionId = helperConfig.getConfig().subscriptionId;
+        address linkToken = helperConfig.getConfig().link;
+        fundSubscripton(vrfCoordinator, subscriptionId, linkToken);
+    }
+
+    function fundSubscripton(
+        address vrfCoordinator,
+        uint256 subscriptionId,
+        address linkToken
+    ) public {
+        console.log("Funding subscription: ", subscriptionId);
+        console.log("Using vrfCoordinator: ", vrfCoordinator);
+        console.log("On ChainId: ", block.chainid);
+
+        if (block.chainid == LOCAL_CHAIN_ID) {
+            vm.startBroadcast();
+            VRFCoordinatorV2_5Mock(vrfCoordinator).fundSubscription(
+                subscriptionId,
+                FUND_AMOUNT
+            );
+            vm.stopBroadcast();
+        } else {
+            vm.startBroadcast();
+            LinkToken(linkToken).transferAndCall(
+                vrfCoordinator,
+                FUND_AMOUNT,
+                abi.encode(subscriptionId)
+            );
+            vm.stopBroadcast();
+        }
+    }
+
+    function run() public {
+        fundSubscriptionUsingConfig();
+    }
 }
