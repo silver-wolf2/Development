@@ -1,66 +1,43 @@
-## Foundry
+# Token Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the **ERC20 - my first token project**! This repository contains the implementation of a standard ERC20 token built using Solidity on the Ethereum blockchain. The project demonstrates the creation, deployment, and interaction with a fungible token contract.
 
-Foundry consists of:
+---
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features
 
-## Documentation
+- **ERC20 Compliance**: Implements the ERC20 token standard, ensuring compatibility with wallets, exchanges, and other smart contracts.
+- **Minting**: Ability to mint new tokens to specific addresses.
+- **Transfer Functionality**: Secure transfer of tokens between accounts.
+- **Allowance System**: Support for token approvals and transfers on behalf of another user.
+- **Event Logging**: Transparent transaction logging through standard ERC20 events (`Transfer` and `Approval`).
 
-https://book.getfoundry.sh/
+---
 
-## Usage
+## Project Structure
 
-### Build
+- **`contracts/`**: Contains the Solidity source code.
+  - `Token.sol`: The ERC20 token contract implementation.
+- **`test/`**: Unit tests for the token contract to ensure functionality and compliance.
+- **`scripts/`**: Scripts for deploying and interacting with the contract.
+- **`.env`**: Environment file to store private keys and RPC URLs.
 
-```shell
-$ forge build
-```
+---
 
-### Test
+## Prerequisites
 
-```shell
-$ forge test
-```
+Before you begin, ensure you have the following installed:
 
-### Format
+- **Node.js** (for Hardhat or other tools)
+- **npm/yarn** (Node package manager)
+- **Solidity** (via Hardhat or Foundry)
+- **Git**
 
-```shell
-$ forge fmt
-```
+---
 
-### Gas Snapshots
+## Installation
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/token-project.git
+   cd token-project
