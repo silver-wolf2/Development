@@ -1,0 +1,30 @@
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/chainlink-brownie-contracts"]
+	path = lib/chainlink-brownie-contracts
+	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "Lottery/lib/forge-std"]
+	path = Lottery/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "Lottery/lib/chainlink-brownie-contracts"]
+	path = Lottery/lib/chainlink-brownie-contracts
+	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "Lottery/lib/solmate"]
+	path = Lottery/lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "ERC20-token/lib/forge-std"]
+	path = ERC20-token/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "ERC20-token/lib/openzeppelin-contracts"]
+	path = ERC20-token/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "NFT/lib/forge-std"]
+	path = NFT/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "NFT/lib/openzeppelin-contracts"]
+	path = NFT/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "NFT/lib/foundry-devops"]
+	path = NFT/lib/foundry-devops
+	url = https://github.com/ChainAccelOrg/foundry-devops
