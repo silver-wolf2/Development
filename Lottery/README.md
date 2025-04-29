@@ -1,66 +1,25 @@
-## Foundry
+### Lottery – Decentralized Raffle Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Lottery is a simple Ethereum smart contract that allows multiple users to participate by sending ETH, and then a random winner is selected to receive the total prize pool. This project is part of my Solidity learning path and explores randomness, access control, and user participation in decentralized apps (dApps).
 
-Foundry consists of:
+⸻
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+#### 🎯 Project Goals
+	•	Allow users to enter the lottery by sending ETH
+	•	Let only the contract owner pick a winner
+	•	Transfer the entire balance to the selected winner
+	•	(Optionally) Integrate Chainlink VRF for secure randomness
 
-## Documentation
+⸻
 
-https://book.getfoundry.sh/
+#### 🛠️ Technologies Used
+	•	Solidity (v0.8.x)
+	•	(Optional) Chainlink VRF – Verifiable random number generation
 
-## Usage
+⸻
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+#### 🧠 Learning Objectives
+	•	Understand how Ethereum contracts hold and send ETH
+	•	Work with arrays and addresses in Solidity
+	•	Implement access control (e.g. onlyOwner)
+	•	(Optional) Explore Chainlink VRF for true randomness in production
