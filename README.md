@@ -1,3 +1,4 @@
+
 ### Silver Wolf - Web3 Solidity Projects
 
 Welcome to my Solidity learning and Web3 development repository! 🚀
@@ -22,14 +23,20 @@ The purpose of these projects is purely educational and focused on gaining hands
 ⸻
 
 #### 🌐 Portfolio and Contacts
-	•	Portfolio Website: https://silverwolf.framer.website/
-	•	X (Twitter): https://x.com/thesilver_wolf2
+<p align="left">
+  <a href="https://silverwolf.framer.website/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-silverwolf.framer.website-blue?style=for-the-badge&logo=internet-explorer" alt="Portfolio Website" />
+  </a>
+  <a href="https://x.com/thesilver_wolf2" target="_blank">
+    <img src="https://img.shields.io/badge/X%20(Twitter)-@thesilver_wolf2-1DA1F2?style=for-the-badge&logo=twitter" alt="X (Twitter)" />
+  </a>
+</p>
 
 ##### Feel free to visit my website or connect with me on X for updates, discussions, or collaborations!
 
 ⸻
 
-🛠️ Technologies Used
+#### 🛠️ Technologies Used
 	•	Solidity (v0.8.x)
 	•	Truffle Framework
 	•	Ganache for local blockchain testing
