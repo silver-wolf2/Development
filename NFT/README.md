@@ -1,66 +1,23 @@
-## Foundry
+### NFT – Basic ERC-721 Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements a simple ERC-721 Non-Fungible Token (NFT) using Solidity.
+It serves as an educational foundation for creating, minting, and managing NFTs on Ethereum-compatible blockchains.
 
-Foundry consists of:
+⸻
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+#### 🎯 Project Overview
+	•	Smart contract that follows the ERC-721 standard
+	•	Allows the contract owner to mint NFTs to a given address
+	•	Each NFT has a unique token ID and optional metadata URI
+	•	Built with OpenZeppelin contracts for security and standardization
 
-## Documentation
+This is part of my personal Web3 development journey to gain practical skills with NFT standards and smart contract best practices.
 
-https://book.getfoundry.sh/
+⸻
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+#### 🛠️ Technologies Used
+	•	Solidity (v0.8.x)
+	•	Truffle – Compilation, deployment, and testing
+	•	Ganache – Local blockchain for testing
+	•	OpenZeppelin – Reusable ERC-721 implementation
+	•	IPFS or centralized URI (optional) – For metadata
